@@ -4,10 +4,9 @@ Este projeto foi parte da minha matéria de Programação Orientada a Objetos, q
 A ideia não era ser um jogo realmente funcional, mas mostrar os conceitos de programação orientada a objetos.
 
 Comandos:
-
-W - Cima\n
-A - Esquerda\n
-S - Baixo\n
-D - Direita\n
-Espaço - ''Atacar"\n
+W - Cima<br>
+A - Esquerda<br>
+S - Baixo<br>
+D - Direita<br>
+Espaço - ''Atacar"<br>
 Aspas - Modo Debug
