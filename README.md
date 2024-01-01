@@ -5,9 +5,9 @@ A ideia não era ser um jogo realmente funcional, mas mostrar os conceitos de pr
 
 Comandos:
 
-W - Cima
-A - Esquerda
-S - Baixo
-D - Direita
-Espaço - ''Atacar"
+W - Cima\n
+A - Esquerda\n
+S - Baixo\n
+D - Direita\n
+Espaço - ''Atacar"\n
 Aspas - Modo Debug
