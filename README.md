@@ -3,7 +3,7 @@ Este projeto foi parte da minha matéria de Programação Orientada a Objetos, q
 
 A ideia não era ser um jogo realmente funcional, mas mostrar os conceitos de programação orientada a objetos.
 
-Comandos:
+Comandos:<br>
 W - Cima<br>
 A - Esquerda<br>
 S - Baixo<br>
