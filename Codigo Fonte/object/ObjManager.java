@@ -16,8 +16,9 @@ public class ObjManager{
     }
     
     public void setObjects(){
-        Chest chest1 = new Chest("chest1", "/res/objects/chest.png", 12*gp.tileSize, 14*gp.tileSize);
+        Chest chest1 = new Chest("chest1", "/res/objects/bau.png", 12*gp.tileSize, 14*gp.tileSize);
         objList[0] = chest1;
+        //Box box1 = new Box("box1","res/objects/box.png", 12*gp.tileSize, 14*gp.tileSize);
         
     }
     

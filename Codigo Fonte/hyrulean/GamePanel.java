@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import loaders.Sound;
 import map.TileManager;
 import object.ObjManager;
 
@@ -18,7 +19,7 @@ public class GamePanel extends JPanel implements Runnable{
     // Configurações Gráficas
     final int starterTileSize = 16; // Tiles de 16x16
     public final int scale = 3; // Escalamento dos tiles para exibição na tela
-    
+    public final Sound sound = new Sound();
     public final int tileSize = starterTileSize*scale; // Tamanho dos tiles com o escalonamento
     public final int maxScreenTilesHorizontal = 20; // Máximo de tiles horizontais
     public final int maxScreenTilesVertical = 15; // Máximo de tiles verticais
@@ -72,6 +73,7 @@ public class GamePanel extends JPanel implements Runnable{
    
     public void setupGame(){
         objM.setObjects();
+        playMusic(0);
     }
     @Override
     //Loop principal do jogo, aonde será rodado até que o jogador feche a janela.
@@ -116,16 +118,30 @@ public class GamePanel extends JPanel implements Runnable{
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g;
-        
-        //Desenha o mapa
-        tileM.draw(g2);
-        //Desenha o jogador
-        player.draw(g2);
-        //Desenha os objetos
-        objM.draw(g2);
+
+        tileM.drawLayer(0, g2);
+        tileM.drawLayer(1, g2);
+        tileM.drawLayer(2, g2);
+ 
+        if (player.worldY > objM.objList[0].worldY) {
+            
+            
+            objM.draw(g2);
+            tileM.drawLayer(3, g2);
+            player.draw(g2);
+        }
+        else {
+            player.draw(g2);
+            tileM.drawLayer(3, g2);
+            objM.draw(g2);
+            
+            
+            
+        }
         
         // Debug
         if (debug) {
+            g2.setColor(Color.WHITE);
             g2.drawString(String.valueOf("DEBUG ON"), 1, 10);
             g2.drawString(String.valueOf("FRAME:" + drawCount), 1, 25);
             g2.drawString(String.valueOf("STATE: "+ player.state), 1, 40);
@@ -180,5 +196,16 @@ public class GamePanel extends JPanel implements Runnable{
                 player.screenY > player.worldY ||
                 rightOffset > worldWidth - player.worldX ||
                 bottomOffset > worldHeight - player.worldY;
+    }
+    
+    public void playMusic(int i){
+        
+        sound.setFile(i);
+        sound.play();
+        sound.loop();
+    }
+    
+    public void stopMusic(){
+        sound.stop();
     }
 }

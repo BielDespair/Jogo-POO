@@ -117,7 +117,7 @@ public class CollisionChecker {
 
                             enableCollision(entity, obj, player, i);
                             moveObj(entity, obj);
-                            System.out.println("Colisão acima");
+                            System.out.println("Colisao acima");
                         }
                             break;
                     case 1:
@@ -125,6 +125,7 @@ public class CollisionChecker {
                         if (entity.hitbox.intersects(obj.hitbox)){
                             enableCollision(entity, obj, player, i);
                             moveObj(entity, obj);
+                            System.out.println("Colisao a esquerda");
                         }
                         break;
                     case 2:
@@ -132,7 +133,7 @@ public class CollisionChecker {
                         if (entity.hitbox.intersects(obj.hitbox)){
                             enableCollision(entity, obj, player, i);
                             moveObj(entity, obj);
-                            System.out.println("Colisão abaixo");
+                            System.out.println("Colisao abaixo");
                         }
                         break;
                     case 3:
@@ -140,7 +141,7 @@ public class CollisionChecker {
                         if (entity.hitbox.intersects(obj.hitbox)){
                             enableCollision(entity, obj, player, i);
                             moveObj(entity, obj);
-                            System.out.println("Colisão na direita");
+                            System.out.println("Colisao na direita");
                         }
                         break;
                 }
